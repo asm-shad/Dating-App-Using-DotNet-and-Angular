@@ -1,0 +1,7 @@
+<app-nav />
+
+<div [ngClass]="{'container mt-24 mx-auto': !(router.url === '/')}">
+    <router-outlet class="w-full"/>
+</div>
+
+<app-confirm-dialog />

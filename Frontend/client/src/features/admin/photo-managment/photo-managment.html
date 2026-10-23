@@ -1,0 +1,16 @@
+<div class="flex gap-8 mt-10">
+    @if (photos().length > 0) {
+    @for (photo of photos(); track photo.id) {
+    <div>
+        <img class="w-80 h-80 rounded-2xl" [src]="photo.url || '/user.png'" alt="image of {{photo.memberId}}">
+        <div class="flex gap-4 mt-2 items-center">
+            <button (click)="approveImage(photo.id)" class="btn btn-success w-38">Approve</button>
+            <button (click)="rejectImage(photo.id)" class="btn btn-error w-38">Reject</button>
+        </div>
+        <div class="justify-self-center my-2 font-medium">User: {{photo.memberId}}</div>
+    </div>
+    }
+    } @else {
+    <div>No Photos to Moderate</div>
+    }
+</div>
